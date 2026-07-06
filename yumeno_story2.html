@@ -59,53 +59,15 @@
   <button type="button" id="closeSheet">閉じる</button>
 </aside>
 
+<script src="story.js"></script>
+
 <script>
-const poll = document.getElementById('poll');
-const options = document.querySelectorAll('.option');
-const note = document.getElementById('note');
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-const key = 'moshimo_yumeno_answers';
-
-function getAnswers(){
-  try { return JSON.parse(localStorage.getItem(key)) || []; }
-  catch(e){ return []; }
-}
-function saveAnswer(text){
-  const answers = getAnswers().filter(a => a.id !== 'yumeno_story2');
-  answers.push({id:'yumeno_story2', title:'Story 2：盛れるけどゴロゴロする', answer:text, time:new Date().toLocaleString('ja-JP')});
-  localStorage.setItem(key, JSON.stringify(answers));
-  renderAnswers();
-}
-function renderAnswers(){
-  const list = document.getElementById('answerList');
-  const answers = getAnswers();
-  if(!answers.length){ list.innerHTML = '<div class="row">まだ回答がありません。</div>'; return; }
-  list.innerHTML = answers.map(a => `<div class="row"><strong>${a.title}</strong><br>${a.answer}<br><small>${a.time}</small></div>`).join('');
-}
-
-options.forEach(option => {
-  option.addEventListener('click', () => {
-    options.forEach(o => o.classList.remove('selected'));
-    option.classList.add('selected');
-    poll.classList.add('voted');
-    options.forEach(o => {
-      o.querySelector('.fill').style.width = o.dataset.pct + '%';
-    });
-    note.classList.add('show');
-    nextBtn.classList.add('show');
-    saveAnswer(option.dataset.text);
-  });
+initStory({
+    id: "yumeno_story2",
+    title: "Story 2：盛れるけどゴロゴロする",
+    prev: "yumeno_story1.html",
+    next: "yumeno_story3.html"
 });
-
-prevBtn.addEventListener('click', () => location.href = 'yumeno_story1.html');
-nextBtn.addEventListener('click', () => {
-  alert('次は「目薬でごまかして、案件投稿のためにもう一度つける」のストーリー予定やで。');
-});
-
-document.getElementById('answersBtn').addEventListener('click', () => document.getElementById('sheet').classList.add('show'));
-document.getElementById('closeSheet').addEventListener('click', () => document.getElementById('sheet').classList.remove('show'));
-renderAnswers();
 </script>
 </body>
 </html>
