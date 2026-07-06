@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MoshiMo | yumeno story 1</title>
+<style>
+:root{--bg:#07050a;--white:#fff;--ink:#fff7fb;--muted:rgba(255,255,255,.76);--pink:#ff7bad;--pink2:#ffd8e8;--hot:#ff3b76;--glass:rgba(255,255,255,.16);--line:rgba(255,255,255,.22);--shadow:0 22px 70px rgba(0,0,0,.36)}
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;background:radial-gradient(circle at 50% 0,#3b2230,#09060c 55%);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;color:var(--ink)} body{display:flex;justify-content:center}.phone{width:min(430px,100%);min-height:100svh;background:#000;position:relative;overflow:hidden;box-shadow:0 0 44px rgba(0,0,0,.4)}
+.story{min-height:100svh;position:relative;display:flex;flex-direction:column;background:#130b12}.bg{position:absolute;inset:0;overflow:hidden}.bg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05) contrast(.96);animation:storyZoom 4s ease-in-out infinite alternate}.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.38),rgba(0,0,0,.06) 30%,rgba(0,0,0,.16) 54%,rgba(0,0,0,.82))}.bg::before{content:"";position:absolute;z-index:1;inset:0;background:radial-gradient(circle at 20% 18%,rgba(255,210,232,.28),transparent 34%),radial-gradient(circle at 84% 62%,rgba(255,123,173,.18),transparent 32%)}@keyframes storyZoom{from{transform:scale(1.02)}to{transform:scale(1.08) translateY(-1%)}}
+.top{position:relative;z-index:5;padding:10px 12px 0}.bars{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:10px}.bar{height:3px;border-radius:999px;background:rgba(255,255,255,.32);overflow:hidden}.bar:first-child::after{content:"";display:block;height:100%;width:70%;background:#fff;border-radius:inherit}.profile{display:flex;align-items:center;gap:9px;text-shadow:0 2px 10px rgba(0,0,0,.55)}.back{width:32px;height:32px;border:0;border-radius:999px;background:rgba(0,0,0,.28);color:#fff;font-size:25px;line-height:1;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px)}.icon{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.9);background:#ffd8e8}.who{font-weight:900}.time{font-size:12px;color:var(--muted);margin-top:2px}.dots{margin-left:auto;font-size:25px;font-weight:900}.close{width:32px;height:32px;border:0;border-radius:999px;background:rgba(0,0,0,.28);color:#fff;font-size:24px;line-height:1;cursor:pointer;backdrop-filter:blur(8px)}
+.content{position:relative;z-index:4;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 18px 92px}.sticker{align-self:flex-start;max-width:92%;transform:rotate(-1.5deg);background:rgba(255,255,255,.92);color:#231821;border-radius:22px;padding:14px 15px;box-shadow:var(--shadow);font-weight:900;font-size:21px;line-height:1.35;letter-spacing:.01em}.sticker b{color:#df477b}.subtxt{align-self:flex-start;margin-top:10px;max-width:88%;background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(9px);border-radius:18px;padding:11px 13px;color:#fff;font-size:14px;line-height:1.6;text-shadow:0 2px 9px #000}.reaction{position:absolute;right:14px;bottom:232px;display:flex;flex-direction:column;gap:18px;text-align:center;text-shadow:0 2px 10px #000}.reaction button{appearance:none;border:0;background:none;color:#fff;font-size:26px;cursor:pointer}.reaction small{display:block;font-size:11px;color:#fff;margin-top:1px;font-weight:800}.comment-badge{position:relative}.comment-badge::after{content:"";position:absolute;right:7px;top:0;width:11px;height:11px;border-radius:50%;background:var(--hot);border:2px solid #fff;animation:pulse 1.2s infinite}@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.28);opacity:.78}}
+.poll{position:relative;z-index:7;margin-top:16px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.24);box-shadow:var(--shadow);backdrop-filter:blur(15px);border-radius:24px;padding:14px}.poll h2{font-size:16px;line-height:1.35;margin:0 0 10px;text-align:center;text-shadow:0 1px 8px rgba(0,0,0,.35)}.option{position:relative;width:100%;min-height:42px;border:1px solid rgba(255,255,255,.40);border-radius:999px;background:rgba(255,255,255,.86);color:#251820;margin:8px 0;padding:10px 13px;text-align:left;font-size:14px;font-weight:850;overflow:hidden;cursor:pointer;box-shadow:0 9px 24px rgba(0,0,0,.12)}.option .fill{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,#ffd6e6,#ff8fba);opacity:.72;transition:width .55s ease}.option .label{position:relative;z-index:2;display:flex;align-items:center;gap:8px;justify-content:space-between}.option .label span:first-child{display:flex;align-items:center;gap:8px}.circle{width:18px;height:18px;border-radius:50%;border:2px solid #e06494;display:inline-grid;place-items:center;flex:0 0 auto;background:#fff}.percent{display:none;font-weight:950;color:#6a354d}.poll.voted .percent{display:inline}.option.selected .circle{background:#e94d82;border-color:#e94d82}.option.selected .circle::after{content:"✓";color:white;font-size:12px;font-weight:950}.note{display:none;margin-top:10px;background:rgba(255,247,251,.92);color:#5a3a49;border-radius:18px;padding:11px 12px;font-size:13px;line-height:1.65}.note.show{display:block}.next{display:none;width:100%;margin-top:10px;border:0;border-radius:999px;background:#fff;color:#21161e;padding:12px 14px;font-weight:950;font-size:14px;cursor:pointer}.next.show{display:block}.bottom{position:fixed;z-index:10;left:50%;bottom:0;transform:translateX(-50%);width:min(430px,100%);height:70px;display:flex;align-items:center;gap:9px;padding:10px 14px;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,0));}.reply{flex:1;border:1px solid rgba(255,255,255,.42);border-radius:999px;background:rgba(0,0,0,.28);color:rgba(255,255,255,.82);padding:12px 14px;font-size:14px;backdrop-filter:blur(8px)}.send{border:0;background:rgba(255,255,255,.9);color:#21161e;border-radius:999px;padding:11px 15px;font-weight:950}.answers{position:fixed;z-index:20;right:12px;top:84px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.24);border-radius:999px;color:#fff;padding:7px 10px;font-size:12px;font-weight:900;backdrop-filter:blur(8px);cursor:pointer}.sheet{position:fixed;z-index:30;left:50%;bottom:0;transform:translateX(-50%) translateY(105%);width:min(430px,100%);max-height:58svh;background:#fff8fb;color:#251820;border-radius:24px 24px 0 0;padding:18px;box-shadow:0 -22px 70px rgba(0,0,0,.35);transition:.25s ease;overflow:auto}.sheet.show{transform:translateX(-50%) translateY(0)}.sheet h3{margin:0 0 10px}.sheet p{margin:8px 0;line-height:1.65;color:#5a4550;font-size:14px}.sheet .row{background:#fff;border:1px solid #efd8e1;border-radius:14px;padding:10px 12px;margin:8px 0}.sheet button{width:100%;border:0;border-radius:999px;background:#251820;color:#fff;padding:12px;font-weight:900;margin-top:10px}@media (min-width:431px){.phone{margin:18px 0;border-radius:28px;min-height:calc(100svh - 36px)}.bottom{bottom:18px;border-radius:0 0 28px 28px}.sheet{bottom:18px;border-radius:24px}.story{border-radius:28px;overflow:hidden}}
+</style>
+</head>
+<body>
+<div class="phone">
+  <main class="story" aria-label="yumenoのストーリー1">
+    <div class="bg"><img src="yumeno_1.png" alt="Shiny Lensの箱を持ってピースする夢乃"></div>
+    <button class="answers" type="button" id="answersBtn">回答ログ</button>
+    <section class="top">
+      <div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <div class="profile">
+        <button class="back" type="button" onclick="location.href='index.html'" aria-label="戻る">‹</button>
+        <img class="icon" src="yumeno.png" alt="夢乃のアイコン">
+        <div><div class="who">yumeno 🦋</div><div class="time">2分前 ・ PR相談</div></div>
+        <div class="dots">…</div>
+        <button class="close" type="button" onclick="location.href='index.html'" aria-label="閉じる">×</button>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="sticker">話題になってた<br><b>Shiny Lens</b>様から<br>DMきちゃ🥰</div>
+      <div class="subtxt">お返事どうしよっかな🧐💭<br>案件料、投稿3本＋ストーリーで18,000円らしい…！</div>
+
+      <div class="reaction" aria-hidden="true">
+        <button type="button">♡<small>742</small></button>
+        <button type="button" class="comment-badge">💬<small>1,284</small></button>
+        <button type="button">↗<small>共有</small></button>
+      </div>
+
+      <section class="poll" id="poll" aria-label="ストーリーアンケート">
+        <h2>💬 夢乃はこのDMを見て、まず何を思ったと思う？</h2>
+        <button class="option" type="button" data-text="18,000円は大きい" data-pct="62"><span class="fill"></span><span class="label"><span><i class="circle"></i>18,000円は大きい</span><span class="percent">62%</span></span></button>
+        <button class="option" type="button" data-text="前から欲しかった仕事" data-pct="46"><span class="fill"></span><span class="label"><span><i class="circle"></i>前から欲しかった仕事</span><span class="percent">46%</span></span></button>
+        <button class="option" type="button" data-text="少し怪しい気もする" data-pct="28"><span class="fill"></span><span class="label"><span><i class="circle"></i>少し怪しい気もする</span><span class="percent">28%</span></span></button>
+        <button class="option" type="button" data-text="フォロワーを増やせそう" data-pct="39"><span class="fill"></span><span class="label"><span><i class="circle"></i>フォロワーを増やせそう</span><span class="percent">39%</span></span></button>
+        <button class="option" type="button" data-text="断ると次の案件が来なくなるかも" data-pct="33"><span class="fill"></span><span class="label"><span><i class="circle"></i>断ると次の案件が来なくなるかも</span><span class="percent">33%</span></span></button>
+        <div class="note" id="note">投票したで。ここでは正解を選ぶより、「夢乃が何を大事にしたのか」を考えるのがポイントや。</div>
+        <button class="next" id="nextBtn" type="button">次のストーリーへ ▶</button>
+      </section>
+    </section>
+  </main>
+
+  <div class="bottom">
+    <div class="reply">メッセージを送信…</div>
+    <button class="send" type="button">送信</button>
+  </div>
+</div>
+
+<aside class="sheet" id="sheet" aria-label="回答ログ">
+  <h3>回答ログ</h3>
+  <p>最終的にはここに、各ストーリーでプレーヤーが選んだ回答が一覧で残る想定やで。</p>
+  <div id="answerList"><div class="row">まだ回答がありません。</div></div>
+  <button type="button" id="closeSheet">閉じる</button>
+</aside>
+
+<script>
+const poll = document.getElementById('poll');
+const options = document.querySelectorAll('.option');
+const note = document.getElementById('note');
+const nextBtn = document.getElementById('nextBtn');
+const key = 'moshimo_yumeno_answers';
+
+function getAnswers(){
+  try { return JSON.parse(localStorage.getItem(key)) || []; }
+  catch(e){ return []; }
+}
+function saveAnswer(text){
+  const answers = getAnswers().filter(a => a.id !== 'yumeno_story1');
+  answers.push({id:'yumeno_story1', title:'Story 1：PR案件のDM', answer:text, time:new Date().toLocaleString('ja-JP')});
+  localStorage.setItem(key, JSON.stringify(answers));
+  renderAnswers();
+}
+function renderAnswers(){
+  const list = document.getElementById('answerList');
+  const answers = getAnswers();
+  if(!answers.length){ list.innerHTML = '<div class="row">まだ回答がありません。</div>'; return; }
+  list.innerHTML = answers.map(a => `<div class="row"><strong>${a.title}</strong><br>${a.answer}<br><small>${a.time}</small></div>`).join('');
+}
+
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    options.forEach(o => o.classList.remove('selected'));
+    option.classList.add('selected');
+    poll.classList.add('voted');
+    options.forEach(o => {
+      o.querySelector('.fill').style.width = o.dataset.pct + '%';
+    });
+    note.classList.add('show');
+    nextBtn.classList.add('show');
+    saveAnswer(option.dataset.text);
+  });
+});
+
+nextBtn.addEventListener('click', () => {
+  window.location.href='yumeno_story2.html';
+});
+
+document.getElementById('answersBtn').addEventListener('click', () => document.getElementById('sheet').classList.add('show'));
+document.getElementById('closeSheet').addEventListener('click', () => document.getElementById('sheet').classList.remove('show'));
+renderAnswers();
+</script>
+</body>
+</html>
