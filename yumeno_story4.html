@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MoshiMo | yumeno story 4</title>
+<link rel="stylesheet" href="story.css">
+</head>
+<body>
+<div class="phone">
+  <main class="story" aria-label="yumenoのストーリー4">
+    <div class="bg"><img src="yumeno_4.png" alt="朝日が眩しく差し込む部屋のぼやけた視界"></div>
+    <button class="answers" type="button" id="answersBtn">回答ログ</button>
+
+    <section class="top">
+      <div class="bars">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      </div>
+      <div class="profile">
+        <button class="back" type="button" onclick="location.href='yumeno_story3.html'" aria-label="戻る">‹</button>
+        <img class="icon" src="yumeno.png" alt="夢乃のアイコン">
+        <div><div class="who">yumeno 🦋</div><div class="time">7時間前 ・ 朝</div></div>
+        <div class="dots">…</div>
+        <button class="close" type="button" onclick="location.href='index.html'" aria-label="閉じる">×</button>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="sticker">え、やばいかも🥲<br>左目が<b>開かない</b>…</div>
+      <div class="subtxt">涙止まらないし、ズキズキする<br>カーテンの光もしんどい😭<br>今日の投稿、どうしよ…</div>
+
+      <div class="reaction" aria-hidden="true">
+        <button type="button">♡<small>2,304</small></button>
+        <button type="button" class="comment-badge">💬<small>912</small></button>
+        <button type="button">↗<small>共有</small></button>
+      </div>
+
+      <section class="poll" id="poll" aria-label="ストーリーアンケート">
+        <h2>💭 この状況、どうする？</h2>
+        <button class="option" type="button" data-text="今日は仕事を休む" data-pct="58"><span class="fill"></span><span class="label"><span><i class="circle"></i>今日は仕事を休む</span><span class="percent">58%</span></span></button>
+        <button class="option" type="button" data-text="すぐ眼科を探す" data-pct="64"><span class="fill"></span><span class="label"><span><i class="circle"></i>すぐ眼科を探す</span><span class="percent">64%</span></span></button>
+        <button class="option" type="button" data-text="PR先に事情を説明する" data-pct="41"><span class="fill"></span><span class="label"><span><i class="circle"></i>PR先に事情を説明する</span><span class="percent">41%</span></span></button>
+        <button class="option" type="button" data-text="少し寝たら治ると思う" data-pct="19"><span class="fill"></span><span class="label"><span><i class="circle"></i>少し寝たら治ると思う</span><span class="percent">19%</span></span></button>
+        <button class="option" type="button" data-text="コンタクト外せば大丈夫" data-pct="23"><span class="fill"></span><span class="label"><span><i class="circle"></i>コンタクト外せば大丈夫</span><span class="percent">23%</span></span></button>
+        <div class="note" id="note">送信したで。ここで初めて「痛い」だけでなく「光がしんどい」が出てくる。あとで振り返る重要サインや。</div>
+        <div class="navrow"><button class="prev show" id="prevBtn" type="button">◀ 前のストーリー</button><button class="next" id="nextBtn" type="button">次のストーリーへ ▶</button></div>
+      </section>
+    </section>
+  </main>
+
+  <div class="bottom">
+    <div class="reply">メッセージを送信…</div>
+    <button class="send" type="button">送信</button>
+  </div>
+</div>
+
+<aside class="sheet" id="sheet" aria-label="回答ログ">
+  <h3>回答ログ</h3>
+  <p>各ストーリーでプレーヤーが選んだ回答がここに残る想定やで。</p>
+  <div id="answerList"><div class="row">まだ回答がありません。</div></div>
+  <button type="button" id="closeSheet">閉じる</button>
+</aside>
+
+<script src="story.js"></script>
+<script>
+initStory({
+  id: "yumeno_story4",
+  title: "Story 4：朝、目が開かない",
+  prev: "yumeno_story3.html",
+  next: "yumeno_story5.html"
+});
+</script>
+</body>
+</html>
