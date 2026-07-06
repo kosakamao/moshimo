@@ -20,7 +20,7 @@ const lessons = [
   {id:'protein', name:'gym_haru', theme:'プロテインだけ飲んでいたら', tags:'#筋トレ #減量 #プロテイン #食事', desc:'食事考えるのめんどいし、プロテインなら太らないっしょ。', emoji:'💪', search:'筋トレ 食事 プロテイン 減量', detail:'会社員Haru。減量のために食事を極端に削り、プロテイン中心生活へ。体重は落ちたが、倦怠感、便秘、肌荒れ、集中力低下が続く。', note:'医学ポイント：特定食品への偏り、エネルギー不足、食物繊維・ビタミン・ミネラル不足。プロテイン自体ではなく、極端な食生活が問題。'},
   {id:'botox', name:'mii_beauty', theme:'ボトックスを受けたら', tags:'#美容医療 #小顔 #自由診療', desc:'初回9800円ならアリでは？ 口コミも悪くないし。', emoji:'💉', search:'美容 ボトックス 自由診療', detail:'美容医療レポを投稿するmii。SNS広告から格安クリニックへ。説明は短く、リスクよりビフォーアフターに意識が向く。術後、表情の違和感や左右差に悩む。', note:'医学ポイント：自由診療の意思決定、適応、説明同意、術者選び、合併症。美容医療は「安い・早い」だけで選ばない。'},
   {id:'antibiotic', name:'hina_days', theme:'抗菌薬を途中でやめたら', tags:'#耳鼻科 #副鼻腔炎 #抗菌薬 #薬', desc:'もう鼻も痛くないし、薬大きいし、飲まなくてよくない？', emoji:'🤧', search:'薬 副鼻腔炎 抗菌薬 風邪', detail:'陽菜は風邪のあと頬の痛みと膿性鼻汁で耳鼻科へ。急性副鼻腔炎として抗菌薬を処方される。2日で楽になり自己判断で中止したが、その後ぶり返す。', note:'医学ポイント：抗菌薬は疾患・薬剤ごとに使い方が異なる。自己判断で中止・延長せず、処方意図と再受診の目安を確認する。'},
-  {id:'coffee', name:'yu_da_truck', theme:'缶コーヒーを毎日飲んだら', tags:'#ドライバー #夜勤 #缶コーヒー', desc:'運転中の眠気対策。甘い缶コーヒーが相棒。', emoji:'☕', search:'眠気 缶コーヒー 糖尿病 ドライバー', detail:'雄大34歳、配送ドライバー。眠気対策に甘い缶コーヒーを毎日何本も飲む。疲れやすさ、喉の渇き、体重変化に気づくが放置。', note:'医学ポイント：糖分を含む飲料の習慣化、体重増加、糖代謝異常。眠気の背景に睡眠不足や睡眠時無呼吸が隠れることも。'}
+  {id:'coffee', name:'yudai🚛', theme:'缶コーヒーを毎日飲んだら', tags:'#ドライバー #夜勤 #缶コーヒー', desc:'眠気対策で今日も缶コーヒー☕ 仕事終わったらジュキヤとゲームする約束👍', emoji:'☕', search:'眠気 缶コーヒー 糖尿病 ドライバー', detail:'雄大34歳、配送ドライバー。眠気対策に甘い缶コーヒーを毎日何本も飲む。疲れやすさ、喉の渇き、体重変化に気づくが放置。', note:'医学ポイント：糖分を含む飲料の習慣化、体重増加、糖代謝異常。眠気の背景に睡眠不足や睡眠時無呼吸が隠れることも。'}
 ];
 const feed=document.getElementById('feed'), grid=document.getElementById('grid');
 function visual(item){ if(item.img) return `<img class="thumb-img" src="${item.img}" alt="${item.name}のサムネイル">`; return `<div class="fake-scene"><div class="scene-inner"><div class="emoji">${item.emoji}</div><strong>${item.theme}</strong><span style="color:#f4d9e8;font-size:12px">2秒ループ動画予定</span></div></div>`; }
@@ -48,6 +48,10 @@ function renderGrid(q=''){ const kw=q.trim(); const list=kw?lessons.filter(x=>(x
 function openLesson(id){
   if(id === 'yumeno'){
     window.location.href = 'yumeno_story1.html';
+    return;
+  }
+  if(id === 'coffee'){
+    window.location.href='yudai_story1.html';
     return;
   }
   const item=lessons.find(x=>x.id===id);
