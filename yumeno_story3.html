@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MoshiMo | yumeno story 3</title>
+<link rel="stylesheet" href="story.css">
+</head>
+<body>
+<div class="phone">
+  <main class="story" aria-label="yumenoのストーリー3">
+    <div class="bg"><img src="yumeno_3.png" alt="ファッションビルの化粧室で全身鏡自撮りをする夢乃"></div>
+    <button class="answers" type="button" id="answersBtn">回答ログ</button>
+
+    <section class="top">
+      <div class="bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      <div class="profile">
+        <button class="back" type="button" onclick="location.href='yumeno_story2.html'" aria-label="戻る">‹</button>
+        <img class="icon" src="yumeno.png" alt="夢乃のアイコン">
+        <div><div class="who">yumeno 🦋</div><div class="time">7時間前 ・ お仕事終わり</div></div>
+        <div class="dots">…</div>
+        <button class="close" type="button" onclick="location.href='index.html'" aria-label="閉じる">×</button>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="sticker">今日も販売<br>がんばった〜🥹🛍️</div>
+      <div class="subtxt">新作コーデかわいすぎる🩵<br>でも右目ズキズキしてきた…🥲<br>PR投稿、まだあと2本あるんだよね</div>
+
+      <div class="reaction" aria-hidden="true">
+        <button type="button">♡<small>1,842</small></button>
+        <button type="button" class="comment-badge">💬<small>698</small></button>
+        <button type="button">↗<small>共有</small></button>
+      </div>
+
+      <section class="poll" id="poll" aria-label="ストーリーアンケート">
+        <h2>💭 あなたならどうする？</h2>
+        <button class="option" type="button" data-text="市販の目薬をさす" data-pct="51"><span class="fill"></span><span class="label"><span><i class="circle"></i>市販の目薬をさす</span><span class="percent">51%</span></span></button>
+        <button class="option" type="button" data-text="少し休んで続きを撮る" data-pct="44"><span class="fill"></span><span class="label"><span><i class="circle"></i>少し休んで続きを撮る</span><span class="percent">44%</span></span></button>
+        <button class="option" type="button" data-text="今日はコンタクトを外す" data-pct="32"><span class="fill"></span><span class="label"><span><i class="circle"></i>今日はコンタクトを外す</span><span class="percent">32%</span></span></button>
+        <button class="option" type="button" data-text="PR先に事情を説明する" data-pct="21"><span class="fill"></span><span class="label"><span><i class="circle"></i>PR先に事情を説明する</span><span class="percent">21%</span></span></button>
+        <button class="option" type="button" data-text="我慢して最後まで撮影する" data-pct="37"><span class="fill"></span><span class="label"><span><i class="circle"></i>我慢して最後まで撮影する</span><span class="percent">37%</span></span></button>
+        <div class="note" id="note">送信したで。「ここまで頑張ったし、あと少しだけ」はかなり強い心理や。お金だけじゃなく、努力を無駄にしたくない気持ちも判断に影響するかもしれん。</div>
+        <div class="navrow"><button class="prev show" id="prevBtn" type="button">◀ 前のストーリー</button><button class="next" id="nextBtn" type="button">次のストーリーへ ▶</button></div>
+      </section>
+    </section>
+  </main>
+
+  <div class="bottom">
+    <div class="reply">メッセージを送信…</div>
+    <button class="send" type="button">送信</button>
+  </div>
+</div>
+
+<aside class="sheet" id="sheet" aria-label="回答ログ">
+  <h3>回答ログ</h3>
+  <p>各ストーリーでプレーヤーが選んだ回答がここに残る想定やで。</p>
+  <div id="answerList"><div class="row">まだ回答がありません。</div></div>
+  <button type="button" id="closeSheet">閉じる</button>
+</aside>
+
+<script src="story.js"></script>
+<script>
+initStory({
+  id: "yumeno_story3",
+  title: "Story 3：まだPR投稿が残っている",
+  prev: "yumeno_story2.html",
+  next: "yumeno_story4.html"
+});
+</script>
+</body>
+</html>
