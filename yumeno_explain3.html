@@ -19,7 +19,7 @@
     <section class="hero">
       <h1>どうすれば<br>よかった？</h1>
       <p>ここは「夢乃が悪かった」と責めるページではなく、次に同じ場面に出会ったとき、どこで止まれるかを考えるページやで。</p>
-      <div class="badge-row"><span class="badge">受診サイン</span><span class="badge">声かけ</span><span class="badge">コメント</span></div>
+      <div class="badge-row"><span class="badge">受診サイン</span><span class="badge">声かけ</span><span class="badge">次に活かす</span></div>
     </section>
 
     <h2 class="section-title">まずは、この4つを覚える</h2>
@@ -45,11 +45,11 @@
 
     <section class="friend-box">
       <h2>もし夢乃が友達なら、<br>なんて声をかける？</h2>
-      <p>責めるより、「受診しやすくなる言葉」を考えてみるページやで。短くてもOK。</p>
-      <label class="comment-label" for="friendComment">あなたのコメント</label>
+      <p>責めるより、「受診しやすくなる言葉」を考えてみよう。短くてもOK。</p>
+      <label class="comment-label" for="friendComment">夢乃にメッセージを送る</label>
       <div class="comment-form">
         <textarea id="friendComment" rows="3" placeholder="例：案件のことは後で一緒に考えよ。まず眼科行こう。"></textarea>
-        <button class="comment-submit" type="button" id="addComment">コメントする</button>
+        <button class="comment-submit" type="button" id="addComment">💗 メッセージを送る</button>
       </div>
       <div class="comment-board" id="commentBoard" aria-live="polite"></div>
     </section>
@@ -80,6 +80,10 @@
     catch(e){ return []; }
   }
 
+  function escapeHtml(text){
+    return text.replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+  }
+
   function render(){
     const saved = getComments();
     if(!saved.length){
@@ -88,10 +92,12 @@
       return;
     }
     board.classList.add('show');
-    board.innerHTML = saved.slice(0,3).map(text => {
-      const safe = text.replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
-      return `<div class="board-item mine"><b>あなたのコメント</b><span>${safe}</span></div>`;
-    }).join('');
+    board.innerHTML = saved.slice(0,3).map(text => `
+      <div class="board-item">
+        <b>あなたのメッセージ</b>
+        <span>${escapeHtml(text)}</span>
+      </div>
+    `).join('');
   }
 
   btn.addEventListener('click', () => {

@@ -27,3 +27,208 @@ a{color:inherit}
 .cta{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(430px,100%);padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(255,248,251,.98),rgba(255,248,251,.82),rgba(255,248,251,0));}.cta a{display:block;text-align:center;text-decoration:none;background:#251820;color:#fff;border-radius:999px;padding:14px 16px;font-weight:950;box-shadow:0 12px 30px rgba(37,24,32,.18)}.cta a:after{content:" →"}
 .navrow{display:flex;gap:8px;margin-top:12px}.navrow a{flex:1;text-align:center;text-decoration:none;border-radius:999px;padding:12px 10px;font-weight:900;font-size:13px}.navrow .sub{background:#fff;border:1px solid var(--line);color:#4b3844}.navrow .mainlink{background:var(--pink);color:#fff}
 @media (min-width:431px){body{background:radial-gradient(circle at top,#fff,#ead9e2 60%)}.app{border-left:1px solid var(--line);border-right:1px solid var(--line)}}
+
+/* =========================================
+   メッセージエリア（.friend-box）のスタイル
+========================================= */
+.friend-box {
+  background: #fff;
+  border: 2px dashed #f0b7cf; /* かわいいピンクの破線 */
+  border-radius: 22px;
+  padding: 20px 16px;
+  margin: 24px 0;
+  box-shadow: 0 10px 28px rgba(232,93,145,.08);
+  text-align: center;
+}
+
+.friend-box h2 {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.friend-box p {
+  font-size: 13px;
+  color: #604d59;
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+
+.comment-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  color: #d94b68;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--ink);
+  background: #faf4f7;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.comment-form textarea:focus {
+  border-color: var(--pink);
+  background: #fff;
+}
+
+.comment-submit {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff7bad, #ff9cc5);
+  color: #fff;
+  font-weight: 950;
+  font-size: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 20px rgba(255,123,173,.3);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.comment-submit:active {
+  transform: scale(0.97); /* 押したときに少しへこむアニメーション */
+}
+
+/* 投稿されたメッセージの表示部分 */
+.comment-board {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.board-item {
+  background: #fff2f8;
+  border: 1px solid #f5cfe0;
+  border-radius: 16px;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.board-item b {
+  display: block;
+  font-size: 11px;
+  color: #7c3654;
+  margin-bottom: 4px;
+}
+
+.board-item span {
+  color: #4b3844;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   受診サイン（.sign-grid）などのスタイル
+========================================= */
+.sign-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.sign-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(75,35,57,.05);
+}
+.sign-icon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.sign-card b {
+  display: block;
+  font-size: 13px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.sign-card span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.callout.danger {
+  background: #fff1f5;
+  border: 1px solid #f1b6c7;
+  border-radius: 18px;
+  padding: 16px;
+  margin: 16px 0 32px;
+}
+.callout.danger h3 {
+  margin: 0 0 8px;
+  color: #d94b68;
+  font-size: 15px;
+}
+.callout.danger p {
+  margin: 0;
+  font-size: 13px;
+  color: #7a3043;
+  line-height: 1.6;
+}
+
+.decision-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.decision {
+  display: flex;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 4px 12px rgba(75,35,57,.05);
+}
+.step {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--pink2);
+  color: #d94b68;
+  font-weight: 900;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.decision b {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.decision p {
+  margin: 0;
+  font-size: 12px;
+  color: #604d59;
+  line-height: 1.5;
+}
