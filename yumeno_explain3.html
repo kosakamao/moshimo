@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MoshiMo | どうすればよかった？</title>
+<link rel="stylesheet" href="explain.css">
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <a class="back" href="yumeno_explain2.html" aria-label="戻る">‹</a>
+    <img class="avatar" src="yumeno.png" alt="yumenoのアイコン">
+    <div class="user"><div class="name">yumeno 🦋</div><div class="meta">振り返り ・ 3/3</div></div>
+    <div class="page-tag">どうする？</div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h1>どうすれば<br>よかった？</h1>
+      <p>ここは「夢乃が悪かった」と責めるページではなく、次に同じ場面に出会ったとき、どこで止まれるかを考えるページやで。</p>
+      <div class="badge-row"><span class="badge">受診サイン</span><span class="badge">声かけ</span><span class="badge">コメント</span></div>
+    </section>
+
+    <h2 class="section-title">まずは、この4つを覚える</h2>
+    <section class="sign-grid" aria-label="コンタクト装用中の受診サイン">
+      <article class="sign-card"><div class="sign-icon">⚡</div><b>痛い</b><span>ズキズキ・チクチクが続く</span></article>
+      <article class="sign-card"><div class="sign-icon">☀️</div><b>まぶしい</b><span>明るい場所がつらい</span></article>
+      <article class="sign-card"><div class="sign-icon">💧</div><b>涙が止まらない</b><span>目を開けていられない</span></article>
+      <article class="sign-card"><div class="sign-icon">👁️</div><b>見えにくい</b><span>かすむ・視力が落ちた感じ</span></article>
+    </section>
+
+    <section class="callout danger">
+      <h3>このサインがあったら</h3>
+      <p><b>コンタクトを外す → その日のうちに眼科へ。</b><br>市販の目薬でごまかして、もう一度つける場面ではないかもしれん。</p>
+    </section>
+
+    <h2 class="section-title">夢乃が止まれたポイント</h2>
+    <section class="decision-list" aria-label="夢乃ができた行動">
+      <article class="decision"><div class="step">1</div><div><b>DMが来たとき</b><p>販売元・承認番号・使用期限・返品先を確認する。日本語が怪しい案件は、即決しない。</p></div></article>
+      <article class="decision"><div class="step">2</div><div><b>ゴロゴロしたとき</b><p>「盛れる」より先に、いったん外す。痛みがあるレンズをつけ続けない。</p></div></article>
+      <article class="decision"><div class="step">3</div><div><b>撮影が残っていたとき</b><p>PR先へ「目に異常が出たので中断します」と連絡する。案件より目が先。</p></div></article>
+      <article class="decision"><div class="step">4</div><div><b>朝、目が開かなかったとき</b><p>仕事や投稿より受診。眼科が閉まっている時間なら、地域の救急相談で受診先を確認する。</p></div></article>
+    </section>
+
+    <section class="friend-box">
+      <h2>もし夢乃が友達なら、<br>なんて声をかける？</h2>
+      <p>責めるより、「受診しやすくなる言葉」を考えてみる。ここに集まるコメントは、将来的には他の学習者にも見える想定やで。</p>
+      <label class="comment-label" for="friendComment">あなたのコメント</label>
+      <textarea id="friendComment" rows="3" placeholder="例：案件のことは後で一緒に考えよ。まず眼科行こう。"></textarea>
+      <button class="comment-submit" type="button" id="addComment">コメントする</button>
+      <div class="comment-board" id="commentBoard" aria-live="polite">
+        <div class="board-item"><b>ri_07</b><span>目は替えがきかないから、今すぐ外して眼科いこ😭</span></div>
+        <div class="board-item"><b>moka__luv</b><span>PR先への連絡文、一緒に考えるからまず病院行って！</span></div>
+        <div class="board-item"><b>student_med</b><span>痛み・まぶしさ・涙は受診サイン。様子見しすぎないで。</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>MoshiMoのまとめ</h3>
+      <p>夢乃は「目の知識がなかった」だけではなく、案件・収入・フォロワー・仕事への不安が重なって受診が遅れた可能性がある。</p>
+      <p>だから次に大事なのは、正しい知識だけでなく、<b>受診できる状況を作ること</b>やで。</p>
+    </section>
+
+    <div class="navrow">
+      <a class="sub" href="yumeno_explain2.html">病態生理へ</a>
+      <a class="mainlink" href="index.html">おすすめへ戻る</a>
+    </div>
+  </main>
+
+  <div class="cta"><a href="index.html">おすすめへ戻る</a></div>
+</div>
+
+<script>
+(() => {
+  const key = 'moshimo_yumeno_friend_comments';
+  const board = document.getElementById('commentBoard');
+  const input = document.getElementById('friendComment');
+  const btn = document.getElementById('addComment');
+
+  function getComments(){
+    try { return JSON.parse(localStorage.getItem(key)) || []; }
+    catch(e){ return []; }
+  }
+  function render(){
+    const saved = getComments();
+    saved.forEach(text => {
+      if(board.querySelector(`[data-text="${CSS.escape(text)}"]`)) return;
+      const div = document.createElement('div');
+      div.className = 'board-item mine';
+      div.dataset.text = text;
+      div.innerHTML = `<b>あなた</b><span></span>`;
+      div.querySelector('span').textContent = text;
+      board.prepend(div);
+    });
+  }
+  btn.addEventListener('click', () => {
+    const text = input.value.trim();
+    if(!text) return;
+    const comments = getComments();
+    comments.unshift(text);
+    localStorage.setItem(key, JSON.stringify(comments.slice(0,8)));
+    input.value = '';
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>
