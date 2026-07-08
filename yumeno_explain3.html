@@ -45,15 +45,13 @@
 
     <section class="friend-box">
       <h2>もし夢乃が友達なら、<br>なんて声をかける？</h2>
-      <p>責めるより、「受診しやすくなる言葉」を考えてみる。ここに集まるコメントは、将来的には他の学習者にも見える想定やで。</p>
+      <p>責めるより、「受診しやすくなる言葉」を考えてみるページやで。短くてもOK。</p>
       <label class="comment-label" for="friendComment">あなたのコメント</label>
-      <textarea id="friendComment" rows="3" placeholder="例：案件のことは後で一緒に考えよ。まず眼科行こう。"></textarea>
-      <button class="comment-submit" type="button" id="addComment">コメントする</button>
-      <div class="comment-board" id="commentBoard" aria-live="polite">
-        <div class="board-item"><b>ri_07</b><span>目は替えがきかないから、今すぐ外して眼科いこ😭</span></div>
-        <div class="board-item"><b>moka__luv</b><span>PR先への連絡文、一緒に考えるからまず病院行って！</span></div>
-        <div class="board-item"><b>student_med</b><span>痛み・まぶしさ・涙は受診サイン。様子見しすぎないで。</span></div>
+      <div class="comment-form">
+        <textarea id="friendComment" rows="3" placeholder="例：案件のことは後で一緒に考えよ。まず眼科行こう。"></textarea>
+        <button class="comment-submit" type="button" id="addComment">コメントする</button>
       </div>
+      <div class="comment-board" id="commentBoard" aria-live="polite"></div>
     </section>
 
     <section class="card">
@@ -62,13 +60,12 @@
       <p>だから次に大事なのは、正しい知識だけでなく、<b>受診できる状況を作ること</b>やで。</p>
     </section>
 
-    <div class="navrow">
-      <a class="sub" href="yumeno_explain2.html">病態生理へ</a>
-      <a class="mainlink" href="index.html">おすすめへ戻る</a>
+    <div class="navrow single">
+      <a class="sub" href="yumeno_explain2.html">← 病態生理へ戻る</a>
     </div>
   </main>
 
-  <div class="cta"><a href="index.html">おすすめへ戻る</a></div>
+  <div class="cta"><a href="index.html">MoshiMoトップに戻る</a></div>
 </div>
 
 <script>
@@ -82,27 +79,31 @@
     try { return JSON.parse(localStorage.getItem(key)) || []; }
     catch(e){ return []; }
   }
+
   function render(){
     const saved = getComments();
-    saved.forEach(text => {
-      if(board.querySelector(`[data-text="${CSS.escape(text)}"]`)) return;
-      const div = document.createElement('div');
-      div.className = 'board-item mine';
-      div.dataset.text = text;
-      div.innerHTML = `<b>あなた</b><span></span>`;
-      div.querySelector('span').textContent = text;
-      board.prepend(div);
-    });
+    if(!saved.length){
+      board.innerHTML = '';
+      board.classList.remove('show');
+      return;
+    }
+    board.classList.add('show');
+    board.innerHTML = saved.slice(0,3).map(text => {
+      const safe = text.replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+      return `<div class="board-item mine"><b>あなたのコメント</b><span>${safe}</span></div>`;
+    }).join('');
   }
+
   btn.addEventListener('click', () => {
     const text = input.value.trim();
     if(!text) return;
     const comments = getComments();
     comments.unshift(text);
-    localStorage.setItem(key, JSON.stringify(comments.slice(0,8)));
+    localStorage.setItem(key, JSON.stringify(comments.slice(0,3)));
     input.value = '';
     render();
   });
+
   render();
 })();
 </script>
