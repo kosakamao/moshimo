@@ -16,14 +16,17 @@
   </header>
 
   <main class="post">
-    <section class="carousel" aria-label="ご報告投稿の画像カルーセル。横にスワイプできます。">
-      <div class="slide fit"><img src="yumeno_feed1.png" alt="ご報告 いつも応援してくださっている皆さまへ"><span class="counter">1/3</span></div>
-      <div class="slide fit"><img src="yumeno_feed2.png" alt="角膜潰瘍の診断と案件中断のご報告"><span class="counter">2/3</span></div>
+    <section class="carousel" aria-label="ご報告投稿の画像カルーセル。左右タップで送れます。">
+      <div class="slide active"><img src="yumeno_feed1.png" alt="ご報告 いつも応援してくださっている皆さまへ"><span class="counter">1/3</span></div>
+      <div class="slide"><img src="yumeno_feed2.png" alt="角膜潰瘍の診断と案件中断のご報告"><span class="counter">2/3</span></div>
       <div class="slide"><img src="yumeno_feed3.png" alt="メガネと点眼薬、診療明細書の写真"><span class="counter">3/3</span></div>
+      <button class="tap prev" type="button" id="prevSlide" aria-label="前の画像へ"></button>
+      <button class="tap next" type="button" id="nextSlide" aria-label="次の画像へ"></button>
+      <span class="navhint left">‹</span><span class="navhint right">›</span>
     </section>
 
-    <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-    <div class="hint">横にスワイプして読む</div>
+    <div class="dots" aria-hidden="true"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+    <div class="hint">画像の左右をタップして読む</div>
 
     <section class="actions" aria-label="投稿アクション">
       <button type="button">♡</button>
@@ -55,5 +58,24 @@
 
   <div class="learn"><a href="yumeno_explain.html">夢乃に何が起きたの？</a></div>
 </div>
+
+<script>
+(() => {
+  const slides = [...document.querySelectorAll('.slide')];
+  const dots = [...document.querySelectorAll('.dot')];
+  const prev = document.getElementById('prevSlide');
+  const next = document.getElementById('nextSlide');
+  let current = 0;
+
+  function show(i){
+    current = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+    dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+  }
+
+  prev.addEventListener('click', () => show(current - 1));
+  next.addEventListener('click', () => show(current + 1));
+})();
+</script>
 </body>
 </html>
