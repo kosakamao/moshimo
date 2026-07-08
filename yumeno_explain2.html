@@ -3,8 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>MoshiMo | 病態関連図</title>
+<title>MoshiMo | 夢乃に何が起きたの？</title>
 <link rel="stylesheet" href="explain.css">
+<style>
+.explain-image-card{margin:14px 0 18px;background:#fff;border:1px solid rgba(229,155,185,.32);border-radius:22px;overflow:hidden;box-shadow:0 14px 38px rgba(60,30,55,.10)}
+.explain-image-card img{display:block;width:100%;height:auto;background:#fff7fb}.image-caption{padding:12px 14px;color:#5f4658;font-size:13px;line-height:1.65;background:linear-gradient(180deg,#fff,#fff7fb)}
+.point-list{display:grid;gap:10px;margin:14px 0}.point{background:#fff;border:1px solid rgba(229,155,185,.26);border-radius:18px;padding:13px 14px}.point b{color:#dc5d8b}.mini-title{margin:22px 0 10px;font-size:16px;color:#2a1828}.navrow{margin-bottom:80px}
+</style>
 </head>
 <body>
 <div class="app">
@@ -12,83 +17,38 @@
     <a class="back" href="yumeno_explain1.html" aria-label="戻る">‹</a>
     <img class="avatar" src="yumeno.png" alt="yumenoのアイコン">
     <div class="user"><div class="name">yumeno 🦋</div><div class="meta">振り返り ・ 2/3</div></div>
-    <div class="page-tag">病態関連図</div>
+    <div class="page-tag">病態生理</div>
   </header>
 
   <main class="main">
     <section class="hero">
-      <h1>生活の流れから見る<br>角膜潰瘍</h1>
-      <p>細かい医学用語を覚えるページではなく、夢乃の生活のどこで「目の表面に傷ができ、感染が進んだのか」を見るページやで。</p>
-      <div class="badge-row"><span class="badge">カラコン</span><span class="badge">角膜</span><span class="badge">感染</span><span class="badge">受診サイン</span></div>
+      <h1>ただの傷じゃなくて、<br>感染が進んでいた</h1>
+      <p>夢乃の「ゴロゴロする」から「目が開かない」までに、目の表面では何が起きていたのかをざっくり見るページやで。</p>
+      <div class="badge-row"><span class="badge">角膜潰瘍</span><span class="badge">痛み</span><span class="badge">羞明</span><span class="badge">早期受診</span></div>
     </section>
 
-    <h2 class="section-title">人生関連図：夢乃の場合</h2>
+    <section class="explain-image-card" aria-label="角膜潰瘍の病態生理図">
+      <img src="yumeno_explain2.png" alt="コンタクトなどで角膜に傷がつき、病原体が侵入し、感染から角膜潰瘍へ進行する流れと症状を示した図">
+      <div class="image-caption">ポイントは、最初の違和感が「ただの乾き」だけではなく、傷や感染の始まりだった可能性があること。</div>
+    </section>
 
-    <section class="diagram" aria-label="夢乃の角膜潰瘍につながった生活寄りの病態関連図">
-      <div class="flow-node key">
-        <h3>📦 PR案件のカラコンが届く</h3>
-        <p>夢乃にとっては「仕事」と「かわいく見せる道具」。この時点では、危険なことをしている感覚は薄い。</p>
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="flow-node key">
-        <h3>👀 つけると少しゴロゴロする</h3>
-        <p>レンズが合わない、汚れ、乾燥、傷などで、目の表面に負担がかかっていた可能性がある。</p>
-      </div>
-
-      <div class="split-label">ここで未来が分かれる</div>
-      <div class="split">
-        <div class="flow-node safe">
-          <h3>🏥 外して眼科へ</h3>
-          <p>早めに原因を確認できれば、悪化を防げた可能性がある。</p>
-        </div>
-        <div class="flow-node danger">
-          <h3>📷 案件のため使い続ける</h3>
-          <p>「あと少し」「仕事だから」という気持ちで、違和感を後回しにする。</p>
-        </div>
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="flow-node medical">
-        <h3>🩹 目の表面に傷ができる</h3>
-        <p>目のいちばん外側にある透明な膜を「角膜」という。ここに傷ができると、強い痛みや涙につながる。</p>
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="flow-node medical">
-        <h3>🦠 傷から細菌などが入り込む</h3>
-        <p>傷がある状態でコンタクトを使い続けると、感染が進むことがある。これが深くなると「角膜潰瘍」と呼ばれる状態になる。</p>
-      </div>
-
-      <div class="arrow-down">↓</div>
-
-      <div class="flow-node danger">
-        <h3>⚠️ 受診サインが出る</h3>
-        <p>夢乃がStory4で言っていた症状は、目からのかなり強いSOS。</p>
-        <div class="symptom-list">
-          <div class="symptom">目が開かない</div>
-          <div class="symptom">涙が止まらない</div>
-          <div class="symptom">ズキズキ痛い</div>
-          <div class="symptom">光がまぶしい</div>
-        </div>
-      </div>
+    <h2 class="section-title">夢乃の症状とつながるところ</h2>
+    <section class="point-list">
+      <div class="point"><b>ゴロゴロする</b><br>目の表面に傷や異物感が出ていたサインかもしれない。</div>
+      <div class="point"><b>強い痛み・涙が止まらない</b><br>角膜は刺激に敏感。傷や感染が進むと、強い痛みや涙につながる。</div>
+      <div class="point"><b>まぶしい</b><br>光がつらい状態は、目のトラブルで大事な受診サインになることがある。</div>
     </section>
 
     <section class="callout">
       <h3>ここで覚えることは1つ</h3>
-      <p>コンタクトをつけていて「痛い」「充血する」「まぶしい」「涙が出る」と感じたら、まず外す。そして早めに眼科へ。市販の目薬でごまかす場面ではないかもしれない。</p>
+      <p>コンタクトをつけていて「痛い」「まぶしい」「涙が止まらない」と感じたら、まず外す。そして早めに眼科へ。市販の目薬でごまかす場面ではないかもしれない。</p>
     </section>
 
     <section class="card">
-      <h3>角膜潰瘍って何？</h3>
-      <p>ざっくり言うと、目の表面にできた深い傷や感染のこと。放置すると、視力に影響が残ることもある。だから「少し痛いけど盛れるから使う」は、思ったよりハイリスクや。</p>
-      <p class="small">※実際の症状や治療は状態によって違うので、痛みや見え方の異常があるときは眼科で相談。</p>
+      <h3>治療は何をするの？</h3>
+      <p>状態に応じて、原因に合った点眼薬などで治療する。自己判断でコンタクトを再開したり、残っている目薬を使い回したりするのは危険やで。</p>
+      <p class="small">※実際の診断・治療は眼科医の判断によるため、目の痛みや見え方の異常があるときは眼科で相談。</p>
     </section>
-
-    <div class="legend"><span class="pink">夢乃が通った流れ</span><span class="green">早く変えられた分岐</span><span class="purple">医学的に起きたこと</span></div>
 
     <div class="navrow">
       <a class="sub" href="yumeno_explain1.html">振り返りへ</a>
