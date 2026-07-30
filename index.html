@@ -16,12 +16,13 @@
 const IMG_YUMENO = "yumeno.png";
 const IMG_YUDAI = "yudai.png";
 const IMG_REN = "ren.png";
+const IMG_MAHO = "maho.png";
+
 const lessons = [
   {id:'yumeno', name:'yumeno🦋', theme:'激安カラコンで詰まない', tags:'#PR #カラコン #美容 #眼科', desc:'今日届いたカラコン🎀 めっちゃ盛れるんだけど、右目だけちょっと痛い🥲', img:IMG_YUMENO, emoji:'🦋', search:'美容 カラコン 眼科 PR', detail:'夢乃は26歳、アパレル販売員。PR案件で届いたカラコンを装用したあと、目の違和感が出る。コメント欄には「眼科いこ」「あと1日案件頑張ろ」「抗菌目薬つかお」などが並ぶ。ユーザーは、夢乃がなぜ受診を後回しにしたのかを考える。', note:'医学ポイント：コンタクトによる角膜上皮障害、感染性角膜炎、角膜潰瘍。痛み・充血・羞明があれば装用中止と眼科受診。'},
   {id:'caffeine', name:'れん👾26時配信', theme:'カフェイン錠剤を飲みすぎたら', tags:'#ゲーム配信 #深夜配信 #眠気 #カフェイン', desc:'26時から新作配信👾 眠気飛ばしたいだけだった。1錠なら平気、じゃあ2錠ならもっと効く？', img:IMG_REN, emoji:'💊', search:'ゲーム 配信 眠気 カフェイン 錠剤', detail:'ゲーム配信者のれん。深夜配信と動画編集を続けるため、エナジードリンクより安くて効くと思い、カフェイン錠剤を使い始める。動悸、手の震え、吐き気が出ても「寝不足だから」と追加してしまう。', note:'医学ポイント：カフェイン過量による中枢神経刺激、頻脈、振戦、悪心、不眠。不安やパニック様症状と見分けにくいことも。'},  
   {id:'protein', name:'gym_haru', theme:'プロテインだけ飲んでいたら', tags:'#筋トレ #減量 #プロテイン #食事', desc:'食事考えるのめんどいし、プロテインなら太らないっしょ。', emoji:'💪', search:'筋トレ 食事 プロテイン 減量', detail:'会社員Haru。減量のために食事を極端に削り、プロテイン中心生活へ。体重は落ちたが、倦怠感、便秘、肌荒れ、集中力低下が続く。', note:'医学ポイント：特定食品への偏り、エネルギー不足、食物繊維・ビタミン・ミネラル不足。プロテイン自体ではなく、極端な食生活が問題。'},
-  {id:'botox', name:'mii_beauty', theme:'ボトックスを受けたら', tags:'#美容医療 #小顔 #自由診療', desc:'初回9800円ならアリでは？ 口コミも悪くないし。', emoji:'💉', search:'美容 ボトックス 自由診療', detail:'美容医療レポを投稿するmii。SNS広告から格安クリニックへ。説明は短く、リスクよりビフォーアフターに意識が向く。術後、表情の違和感や左右差に悩む。', note:'医学ポイント：自由診療の意思決定、適応、説明同意、術者選び、合併症。美容医療は「安い・早い」だけで選ばない。'},
-  {id:'antibiotic', name:'hina_days', theme:'抗菌薬を途中でやめたら', tags:'#耳鼻科 #副鼻腔炎 #抗菌薬 #薬', desc:'もう鼻も痛くないし、薬大きいし、飲まなくてよくない？', emoji:'🤧', search:'薬 副鼻腔炎 抗菌薬 風邪', detail:'陽菜は風邪のあと頬の痛みと膿性鼻汁で耳鼻科へ。急性副鼻腔炎として抗菌薬を処方される。2日で楽になり自己判断で中止したが、その後ぶり返す。', note:'医学ポイント：抗菌薬は疾患・薬剤ごとに使い方が異なる。自己判断で中止・延長せず、処方意図と再受診の目安を確認する。'},
+  {id:'botox', name:'maho🌿プチプラ美容と育児｜4 y girl👧', theme:'ボトックスを受けたら', tags:'#ママ美容 #美容医療 #ボトックス #初回体験 #正直レビュー', desc:'初回9800円✨ 娘のお迎えまで1時間あったので、ずっと気になってたボトックス受けてきます🥹', img:IMG_MAHO, emoji:'💉', search:'美容 ボトックス 美容医療 ママ プチプラ しわ', detail:'34歳、4歳女の子ママのmaho。家事や育児の合間に、無理のない範囲で美容を楽しんでいる。SNSで見かけた「初回9800円」の広告をきっかけに美容クリニックを予約。価格だけで選んだことが、思わぬ後悔につながる。', note:'医学ポイント：美容医療は医療行為です。料金だけで選ばず、適応・副作用・医師の経験や実績、十分な説明を受けて納得したうえで施術を受けることが大切です。'},  {id:'antibiotic', name:'hina_days', theme:'抗菌薬を途中でやめたら', tags:'#耳鼻科 #副鼻腔炎 #抗菌薬 #薬', desc:'もう鼻も痛くないし、薬大きいし、飲まなくてよくない？', emoji:'🤧', search:'薬 副鼻腔炎 抗菌薬 風邪', detail:'陽菜は風邪のあと頬の痛みと膿性鼻汁で耳鼻科へ。急性副鼻腔炎として抗菌薬を処方される。2日で楽になり自己判断で中止したが、その後ぶり返す。', note:'医学ポイント：抗菌薬は疾患・薬剤ごとに使い方が異なる。自己判断で中止・延長せず、処方意図と再受診の目安を確認する。'},
   {id:'coffee', name:'yudai🚛', theme:'缶コーヒーを毎日飲んだら', tags:'#ドライバー #夜勤 #缶コーヒー', desc:'眠気対策で今日も缶コーヒー☕ 仕事終わったらジュキヤとゲームする約束👍', img: IMG_YUDAI, emoji:'☕', search:'眠気 缶コーヒー 糖尿病 ドライバー', detail:'雄大34歳、配送ドライバー。眠気対策に甘い缶コーヒーを毎日何本も飲む。疲れやすさ、喉の渇き、体重変化に気づくが放置。', note:'医学ポイント：糖分を含む飲料の習慣化、体重増加、糖代謝異常。眠気の背景に睡眠不足や睡眠時無呼吸が隠れることも。'}
 ];
 const feed=document.getElementById('feed'), grid=document.getElementById('grid');
@@ -48,18 +49,31 @@ function renderFeed(list=lessons){
 }
 function renderGrid(q=''){ const kw=q.trim(); const list=kw?lessons.filter(x=>(x.search+x.theme+x.tags+x.name).includes(kw)):lessons; grid.innerHTML=list.map(item=>`<button class="tile" type="button" data-id="${item.id}"><div class="visual">${visual(item)}</div><div class="tile-play">▶ 2秒</div><div class="tile-info"><div class="tile-title">${item.theme}</div><div class="tile-meta">${item.name}　${item.tags}</div></div></button>`).join(''); document.querySelectorAll('.tile').forEach(t=>t.addEventListener('click',()=>openLesson(t.dataset.id))); }
 function openLesson(id){
+
   if(id === 'yumeno'){
     window.location.href = 'yumeno_story1.html';
     return;
   }
-  if(id === 'coffee'){
-    window.location.href='yudai_story1.html';
+
+  if(id === 'caffeine'){
+    window.location.href = 'ren_story1.html';
     return;
   }
-  const item=lessons.find(x=>x.id===id);
-  document.getElementById('modalTitle').textContent=item.theme;
-  document.getElementById('modalBody').textContent=item.detail;
-  document.getElementById('modalNote').textContent=item.note;
+
+  if(id === 'botox'){
+    window.location.href = 'maho_story1.html';
+    return;
+  }
+
+  if(id === 'coffee'){
+    window.location.href = 'yudai_story1.html';
+    return;
+  }
+
+  const item = lessons.find(x => x.id === id);
+  document.getElementById('modalTitle').textContent = item.theme;
+  document.getElementById('modalBody').textContent = item.detail;
+  document.getElementById('modalNote').textContent = item.note;
   document.getElementById('modal').classList.add('show');
 }
 
